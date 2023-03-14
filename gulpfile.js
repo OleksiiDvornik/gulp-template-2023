@@ -10,6 +10,7 @@ import path, { buildFolder } from './gulp/config/path.js';
 // Separate tasks import
 
 import { html, htmlProd } from './gulp/tasks/html.js';
+import { styles, stylesProd } from './gulp/tasks/styles.js';
  
 // Configuration global variable
 
@@ -31,8 +32,9 @@ const watch = () => {
   });
   app.gulp.watch(app.path.dest.html).on('change', browserSync.reload);
   app.gulp.watch(app.path.watch.html, html);
+  app.gulp.watch(app.path.watch.styles, styles);
 };
 
 // Gulp tasks
 
-export default gulp.parallel(html, watch);
+export default gulp.parallel(html, styles, watch);
