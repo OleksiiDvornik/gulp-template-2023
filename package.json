@@ -1,0 +1,23 @@
+{
+  "name": "gulp-template-2023",
+  "version": "1.0.0",
+  "description": "Starter template for layout using Gulp + Webpack",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OleksiiDvornik/gulp-template-2023.git"
+  },
+  "keywords": [
+    "Gulp",
+    "Webpack"
+  ],
+  "author": "Oleksii Dvornik <oleksii.dvornik@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OleksiiDvornik/gulp-template-2023/issues"
+  },
+  "homepage": "https://github.com/OleksiiDvornik/gulp-template-2023#readme"
+}
