@@ -12,6 +12,7 @@ import path, { buildFolder } from './gulp/config/path.js';
 import { html, htmlProd } from './gulp/tasks/html.js';
 import { styles, stylesProd } from './gulp/tasks/styles.js';
 import { scripts, scriptsProd } from './gulp/tasks/scripts.js';
+import { copyRoot, copyFonts } from './gulp/tasks/copy.js';
 import clear from './gulp/tasks/clear.js';
  
 // Configuration global variable
@@ -40,6 +41,8 @@ const watch = () => {
 
 // Gulp tasks
 
-export default gulp.parallel(html, styles, scripts, watch);
+const copy = gulp.series(copyRoot, copyFonts)
 
 export const build = gulp.series(clear, htmlProd, stylesProd, scriptsProd);
+
+export default gulp.parallel(html, styles, scripts, copy, watch);

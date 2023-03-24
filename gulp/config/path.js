@@ -18,6 +18,8 @@ const path = {
     html: buildFolder,
     styles: `${buildFolder}/styles`,
     scripts: `${buildFolder}/scripts`,
+    fonts: `${buildFolder}/fonts`,
+    files: buildFolder,
   },
   watch: {
     html: [`${publicFolder}/*.html`, `${srcFolder}/html/*.html`],
