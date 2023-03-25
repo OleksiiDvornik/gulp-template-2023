@@ -12,7 +12,7 @@ import path, { buildFolder } from './gulp/config/path.js';
 import { html, htmlProd } from './gulp/tasks/html.js';
 import { styles, stylesProd } from './gulp/tasks/styles.js';
 import { scripts, scriptsProd } from './gulp/tasks/scripts.js';
-import { copyRoot, copyFonts } from './gulp/tasks/copy.js';
+import { copyRoot, copyFonts, copyLibs, copyImages } from './gulp/tasks/copy.js';
 import clear from './gulp/tasks/clear.js';
  
 // Configuration global variable
@@ -37,12 +37,13 @@ const watch = () => {
   app.gulp.watch(app.path.watch.html, html);
   app.gulp.watch(app.path.watch.styles, styles);
   app.gulp.watch(app.path.watch.scripts, scripts);
+  app.gulp.watch(app.path.public.images, copyImages);
 };
 
 // Gulp tasks
 
-const copy = gulp.series(copyRoot, copyFonts)
+const copy = gulp.series(copyRoot, copyFonts, copyLibs, copyImages)
 
-export const build = gulp.series(clear, htmlProd, stylesProd, scriptsProd);
+export const build = gulp.series(clear, htmlProd, stylesProd, scriptsProd, copy);
 
 export default gulp.parallel(html, styles, scripts, copy, watch);

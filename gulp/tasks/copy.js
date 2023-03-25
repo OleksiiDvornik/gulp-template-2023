@@ -15,3 +15,16 @@ export const copyFonts = () => {
     .pipe(changed(app.path.dest.fonts))
     .pipe(app.gulp.dest(app.path.dest.fonts))
 }
+
+export const copyLibs = () => {
+  return app.gulp.src(app.path.public.libs)
+    .pipe(changed(app.path.dest.libs))
+    .pipe(app.gulp.dest(app.path.dest.fonts))
+}
+
+export const copyImages = () => {
+  return app.gulp.src(app.path.public.images)
+    .pipe(changed(app.path.dest.images))
+    .pipe(app.gulp.dest(app.path.dest.images))
+    .pipe(app.watcher.stream())
+}

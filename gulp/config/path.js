@@ -13,12 +13,15 @@ const path = {
   src: {
     styles: `${srcFolder}/scss/*.scss`,
     scripts: `${srcFolder}/scripts/*.js`,
+    images: `${srcFolder}/img/**/*.{jpeg,jpg,png}`,
   },
   dest: {
     html: buildFolder,
     styles: `${buildFolder}/styles`,
     scripts: `${buildFolder}/scripts`,
+    images: `${buildFolder}/img`,
     fonts: `${buildFolder}/fonts`,
+    libs: `${buildFolder}/libs`,
     files: buildFolder,
   },
   watch: {
