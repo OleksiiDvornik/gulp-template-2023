@@ -14,6 +14,7 @@ import { styles, stylesProd } from './gulp/tasks/styles.js';
 import { scripts, scriptsProd } from './gulp/tasks/scripts.js';
 import { copyRoot, copyFonts, copyLibs, copyImages } from './gulp/tasks/copy.js';
 import { optimizeImages, createWebp } from './gulp/tasks/images.js';
+import { convert2ttf, convert2woff} from './gulp/tasks/fonts.js';
 import svgSprite from './gulp/tasks/sprite.js';
 import clear from './gulp/tasks/clear.js';
  
@@ -48,6 +49,9 @@ const watch = () => {
 
 const copy = gulp.series(copyRoot, copyFonts, copyLibs, copyImages);
 const images = gulp.series(createWebp, optimizeImages, svgSprite);
+
+export const otf = convert2ttf;
+export const woff = convert2woff;
 
 export const build = gulp.series(
   clear, 
