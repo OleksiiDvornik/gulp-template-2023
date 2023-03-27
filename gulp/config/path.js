@@ -14,6 +14,7 @@ const path = {
     styles: `${srcFolder}/scss/*.scss`,
     scripts: `${srcFolder}/scripts/*.js`,
     images: `${srcFolder}/img/**/*.{jpeg,jpg,png}`,
+    svg: `${srcFolder}/img/icons/*.svg`
   },
   dest: {
     html: buildFolder,
