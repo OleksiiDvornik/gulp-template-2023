@@ -16,7 +16,6 @@ export const createWebp = () => {
   return app.gulp.src(app.path.src.images)
     .pipe(changed(app.path.dest.images))
     .pipe(webp({ quality: 90 }))
-    .pipe(app.gulp.dest(`${publicFolder}/img`))
     .pipe(app.gulp.dest(app.path.dest.images))
     .pipe(app.watcher.stream())
 }
@@ -30,6 +29,6 @@ export const optimizeImages = () => {
     ], {
       verbose: true
     }))
-    .pipe(app.gulp.dest(`${publicFolder}/img`))
+    .pipe(app.gulp.dest(app.path.dest.images))
     .pipe(app.watcher.stream())
 }
